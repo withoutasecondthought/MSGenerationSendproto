@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package msgenerationsend;
+
+option go_package="./msgenerationsend";
+
+service Person {
+  rpc SendPerson(PersonRequest) returns (google.protobuf.Empty) {}
+};
+
+message PersonRequest {
+  bytes personJSON = 1;
+}
